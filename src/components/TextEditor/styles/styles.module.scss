@@ -1,0 +1,126 @@
+@mixin btn(){
+  width: calc(1.75rem * 3 + 30px);
+  @apply justify-between flex px-2;
+}
+
+@mixin defaults(){
+  ol{
+    @apply list-decimal pl-10;
+  }
+  ul{
+      @apply list-disc pl-10;
+  }
+
+  a{
+    @apply underline text-sky-700;
+  }
+
+}
+
+
+#TextEditor {
+  @include  defaults;
+  @apply flex flex-col justify-start border border-slate-200 rounded-md overflow-hidden
+         shadow-lg;
+
+  #Buttons{
+    @apply border-b border-b-slate-200  min-h-[46px] flex
+           items-center justify-start;
+
+    div:not(:last-child) {
+      @include btn;
+      @apply  border-r border-r-slate-300;
+    }
+
+
+
+    div:last-child{
+      @include btn;
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        @apply rounded-md bg-gray-600;
+      }
+
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+      @apply  flex w-28;
+
+      button:last-child {
+        @apply hover:bg-white hover:text-slate-700;
+
+        div {
+          @apply hidden rounded-md;
+        }
+
+        &:hover div{
+            @apply flex ;
+        }
+
+        div button{
+          @apply hover:bg-slate-200 hover:text-slate-700;
+        }
+
+      }
+    }
+
+
+
+    button {
+        @apply
+            w-7 h-7 rounded-md
+            flex
+            text-slate-700
+            justify-center
+            items-center
+            text-xl
+            transition-colors
+            hover:bg-sky-100
+            hover:text-sky-800
+        ;
+    }
+  }
+
+
+  #TextareaWrapper {
+    @apply overflow-y-auto overflow-x-hidden;
+
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      @apply rounded-md bg-gray-600;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
+
+
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: inherit;
+  background: skyblue;
+}
+

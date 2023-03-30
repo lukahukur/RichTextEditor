@@ -15,8 +15,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "typeRoots": ["./dist/index.d.ts"]
   },
-  "include": ["src","./index.ts"],
+  "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }],
 }
